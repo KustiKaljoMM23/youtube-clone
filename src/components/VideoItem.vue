@@ -18,7 +18,7 @@
   const props = defineProps(['title', 'views', 'img'])
   
   const randomImages = [
-    "https://placekitten.com/400/200",
+    "https://placebear.com/400/200",
     "https://placebear.com/400/200",
     "https://placebeard.it/400x200",
     "https://baconmockup.com/400/200"
