@@ -1,17 +1,20 @@
 <template>
-    <div class="columns is-multiline" id="video-grid">
-      <VideoItem
-        v-for="(video, index) in videos"
-        :key="index"
-        :title="video.title"
-        :views="video.views"
-        :img="video.img"
-      />
-    </div>
-  </template>
-  
-  <script setup>
-  import VideoItem from './VideoItem.vue'
+  <div class="columns is-multiline" id="video-grid">
+    <VideoItem
+      v-for="(video, index) in filteredVideos"
+      :key="index"
+      :title="video.title"
+      :views="video.views"
+      :img="video.img"
+    />
+  </div>
+</template>
+
+<script setup>
+import { computed } from 'vue'
+import VideoItem from './VideoItem.vue'
+
+const props = defineProps(['category'])
   
   const videos = [
     // Row 1
@@ -32,5 +35,9 @@
     { title: "Workout Routine", views: "600K views • 1 week ago", img: "https://placebear.com/351/180" },
     { title: "Art Time-lapse", views: "850K views • 3 days ago", img: "https://placebear.com/523/180" }
   ]
-  </script>
+  const filteredVideos = computed(() => {
+  if (props.category === 'All') return videos
+  return videos.filter(v => v.category === props.category)
+})
+</script>
   
