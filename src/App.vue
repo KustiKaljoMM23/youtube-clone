@@ -12,7 +12,7 @@
 import { ref } from 'vue'
 import Navbar from './components/Navbar.vue'
 import Sidebar from './components/Sidebar.vue'
-import VideoGrid from './components/VideoGrid.vue'
+import VideoGrid from './components/Videogrid.vue'
 
 const currentCategory = ref('All')
 </script>
